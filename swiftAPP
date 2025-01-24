@@ -1,0 +1,76 @@
+import Foundation
+
+func showMenu() {
+    print("""
+    ========================================
+                GAME INTERATIVO 👾👾👾
+    ========================================
+    Escolha uma opção:
+    1 - Curiosidades Aleatórias
+    2 - Quiz Interativo
+    3 - Sair
+    ========================================
+    """)
+}
+
+func randomFact() {
+    let facts = [
+        "A maior palavra da língua portuguesa é pneumoultramicroscopicossilicovulcanoconiótico.",
+        "Um raio pode atingir uma temperatura cinco vezes maior que a superfície do Sol.",
+        "A água compõe cerca de 70% do corpo humano.",
+        "O golfinho é o único animal além dos humanos que dá nomes uns aos outros.",
+        "O coração humano bate cerca de 100.000 vezes por dia."
+    ]
+    if let randomFact = facts.randomElement() {
+        print("📚 Curiosidade: \(randomFact)")
+    }
+}
+
+func quizGame() {
+    let questions = [
+        ("Qual é a capital da França?", "Paris"),
+        ("Quantos planetas existem no Sistema Solar?", "8"),
+        ("Quem pintou a Mona Lisa?", "Leonardo da Vinci"),
+        ("Em que ano o homem pisou na Lua pela primeira vez?", "1969"),
+        ("Qual é o maior oceano do mundo?", "Pacífico")
+    ]
+
+    if let randomQuestion = questions.randomElement() {
+        print("❓ Pergunta: \(randomQuestion.0)")
+        print("Digite sua resposta:")
+
+        if let userAnswer = readLine() {
+            if userAnswer.lowercased() == randomQuestion.1.lowercased() {
+                print("🎉 Parabéns! Você acertou.")
+            } else {
+                print("😞 Que pena! A resposta correta era: \(randomQuestion.1).")
+            }
+        }
+    }
+}
+
+func main() {
+    var shouldContinue = true
+
+    while shouldContinue {
+        showMenu()
+        print("Escolha uma opção:")
+        if let choice = readLine() {
+            switch choice {
+            case "1":
+                randomFact()
+            case "2":
+                quizGame()
+            case "3":
+                print("Encerrando o programa. Obrigado por jogar! 🎮")
+                shouldContinue = false
+            default:
+                print("Opção inválida! Por favor, tente novamente.")
+            }
+        }
+        print("\n")
+    }
+}
+
+// Executa o programa
+main()
