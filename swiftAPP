@@ -1,3 +1,92 @@
+import SwiftUI
+
+// Estrutura do conteúdo principal da interface
+struct ContentView: View {
+    @State private var message = "Olá, mundo!"
+    
+    var body: some View {
+        VStack {
+            Text(message)
+                .font(.largeTitle)
+                .padding()
+            
+            Button(action: {
+                message = "Você clicou no botão!"
+            }) {
+                Text("Clique aqui")
+                    .font(.title)
+                    .padding()
+                    .background(Color.blue)
+                    .foregroundColor(.white)
+                    .cornerRadius(10)
+            }
+            .padding()
+        }
+        .padding()
+    }
+}
+
+// Estrutura principal do app
+@main
+struct MyApp: App {
+    var body: some Scene {
+        WindowGroup {
+            Content
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 import Foundation
 
 func showMenu() {
